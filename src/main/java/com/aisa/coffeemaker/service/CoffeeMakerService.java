@@ -1,10 +1,10 @@
-package com.aisa.test.coffeemaker.service;
+package com.aisa.coffeemaker.service;
 
-import com.aisa.test.coffeemaker.dao.CoffeeMakerRepository;
-import com.aisa.test.coffeemaker.domain.CoffeeMaker;
+import com.aisa.coffeemaker.dao.CoffeeMakerRepository;
+import com.aisa.coffeemaker.domain.CoffeeMaker;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
+
 
 @Service
 public class CoffeeMakerService {
@@ -39,7 +39,7 @@ public class CoffeeMakerService {
 
     public void espresso(int id) throws Exception {
         CoffeeMaker coffeeMaker = coffeeMakerDAO.getReferenceById(id);
-        if ((coffeeMaker.getCoffee() < 2)||(coffeeMaker.getWater() < 1)) {
+        if ((coffeeMaker.getCoffee() < 2) || (coffeeMaker.getWater() < 1)) {
             throw new Exception("Please fill in coffee or water to create espresso");
         }
         coffeeMaker.setCoffee(coffeeMaker.getCoffee() - 2);
@@ -52,7 +52,7 @@ public class CoffeeMakerService {
         if (!coffeeMaker.isPowerOn()) {
             throw new Exception("Please turn on the coffee maker");
         }
-        if ((coffeeMaker.getCoffee() < 1)||(coffeeMaker.getWater() < 1)||(coffeeMaker.getMilk() < 1)) {
+        if ((coffeeMaker.getCoffee() < 1) || (coffeeMaker.getWater() < 1) || (coffeeMaker.getMilk() < 1)) {
             throw new Exception("Please fill in coffee or water or milk to create americano");
         }
         coffeeMaker.setCoffee(coffeeMaker.getCoffee() - 1);
@@ -63,9 +63,9 @@ public class CoffeeMakerService {
 
     public void fillAllResources(int id) {
         CoffeeMaker coffeeMaker = coffeeMakerDAO.getReferenceById(id);
-        coffeeMaker.setCoffee(coffeeMaker.getCoffee() + 5);
-        coffeeMaker.setWater(coffeeMaker.getWater() + 5);
-        coffeeMaker.setMilk(coffeeMaker.getMilk() + 5);
+        coffeeMaker.setCoffee(5);
+        coffeeMaker.setWater(5);
+        coffeeMaker.setMilk(5);
         coffeeMakerDAO.save(coffeeMaker);
     }
 }

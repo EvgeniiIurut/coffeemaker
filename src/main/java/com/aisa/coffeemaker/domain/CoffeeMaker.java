@@ -1,4 +1,4 @@
-package com.aisa.test.coffeemaker.domain;
+package com.aisa.coffeemaker.domain;
 
 import lombok.Data;
 
@@ -9,7 +9,6 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-//jpa анотации для автоматического подтягивания над каждым полем автогенерация и тд
 public class CoffeeMaker {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

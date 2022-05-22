@@ -1,4 +1,4 @@
-package com.aisa.test.coffeemaker;
+package com.aisa.coffeemaker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

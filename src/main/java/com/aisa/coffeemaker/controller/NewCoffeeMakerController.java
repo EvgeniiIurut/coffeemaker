@@ -1,7 +1,7 @@
-package com.aisa.test.coffeemaker.controller;
+package com.aisa.coffeemaker.controller;
 
-import com.aisa.test.coffeemaker.domain.CoffeeMaker;
-import com.aisa.test.coffeemaker.service.CoffeeMakerService;
+import com.aisa.coffeemaker.domain.CoffeeMaker;
+import com.aisa.coffeemaker.service.CoffeeMakerService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -50,7 +50,4 @@ public class NewCoffeeMakerController {
     void fillAllResources(@PathVariable int id) {
         coffeeMakerService.fillAllResources(id);
     }
-
-
-
 }
